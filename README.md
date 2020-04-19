@@ -1,3 +1,30 @@
+
+<h1 align="center">react-ts-starter-pack</h1>
+<div align="center">
+
+A opinionated starter pack for your React using TypeScript
+
+![Node.js CI](https://github.com/jeff-li/react-ts-starter-pack/workflows/Node.js%20CI/badge.svg)
+[![codecov](https://codecov.io/gh/jeff-li/react-ts-starter-pack/branch/master/graph/badge.svg)](https://codecov.io/gh/jeff-li/react-starter-pack)
+[![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+
+</div>
+
+## To-do List
+✅ CRA with TypeScript template
+✅ ESLint
+✅ Prettier
+✅ Github Actions
+✅ Codecov
+⬜️ React Router (using new hooks with 5.1.x)
+⬜️ Material UI v4
+⬜️ Authentication with Auth0
+⬜️ Function Component with State Hook instead of Class Component
+⬜️ React Context API for "global" data
+⬜️ Formik
+⬜️ Redux
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
