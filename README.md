@@ -2,7 +2,7 @@
 <h1 align="center">react-ts-starter-pack</h1>
 <div align="center">
 
-A opinionated starter pack for your React using TypeScript
+An opinionated starter pack for your React using TypeScript
 
 ![Node.js CI](https://github.com/jeff-li/react-ts-starter-pack/workflows/Node.js%20CI/badge.svg)
 [![codecov](https://codecov.io/gh/jeff-li/react-ts-starter-pack/branch/master/graph/badge.svg)](https://codecov.io/gh/jeff-li/react-starter-pack)
@@ -11,7 +11,7 @@ A opinionated starter pack for your React using TypeScript
 </div>
 
 ## To-do List
-✅ CRA with TypeScript template. 
+✅ CRA with TypeScript template  
 ✅ ESLint  
 ✅ Prettier  
 ✅ Github Actions  
