@@ -13,11 +13,11 @@ An opinionated starter pack for your React using TypeScript
 ## To-do List
 ✅ CRA with TypeScript template  
 ✅ ESLint  
-✅ Prettier  
+✅ Prettier   
 ✅ Github Actions  
 ✅ Codecov  
-⬜️ React Router (using new hooks with 5.1.x)  
-⬜️ Material UI v4  
+✅ React Router (using new hooks with 5.1.x)  
+✅ Material UI v4  
 ⬜️ Authentication with Auth0  
 ⬜️ Function Component with State Hook instead of Class Component  
 ⬜️ React Context API for "global" data  
