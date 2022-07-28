@@ -1,5 +1,14 @@
-import * as React from 'react';
-import { MantineThemeOverride, MantineProvider, AppShell, Navbar, Header } from '@mantine/core';
+import React, { useState } from 'react';
+import { MantineThemeOverride, MantineProvider, 
+  AppShell,
+  Navbar,
+  Header,
+  Text,
+  MediaQuery,
+  Burger
+} from '@mantine/core';
+
+import AppFooter from '../../components/AppFooter';
 
 const App: React.FC = () => {
   const myTheme: MantineThemeOverride = {
@@ -7,20 +16,47 @@ const App: React.FC = () => {
     primaryColor: 'orange',
     defaultRadius: 0
   };
+  const [opened, setOpened] = useState(false);
+
   return (
     <MantineProvider
       withNormalizeCSS
       theme={myTheme}
     >
       <AppShell
-        padding="md"
-        navbar={<Navbar width={{ base: 300 }} height={500} p="xs">{/* Navbar content */}</Navbar>}
-        header={<Header height={60} p="xs">{/* Header content */}</Header>}
         styles={(theme) => ({
-          main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
+          main: {
+            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+          },
         })}
+        navbarOffsetBreakpoint="sm"
+        asideOffsetBreakpoint="sm"
+        fixed
+        navbar={
+          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
+            <Text>Application navbar</Text>
+          </Navbar>
+        }
+        footer={<AppFooter />}
+        header={
+          <Header height={70} p="md">
+            <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
+                <Burger
+                  opened={opened}
+                  onClick={() => setOpened((o) => !o)}
+                  size="sm"
+                  mr="xl"
+                />
+              </MediaQuery>
+
+              <Text>Application header</Text>
+            </div>
+          </Header>
+        }
       >
         <div>Home</div>
+        <Text>Resize app to see responsive navbar in action</Text>
       </AppShell>
     </MantineProvider>
   );
