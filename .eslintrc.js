@@ -6,12 +6,17 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    // eslint-plugin-react
     'plugin:react/recommended',
+    // @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    // eslint-plugin-import
     'plugin:import/recommended',
     'plugin:import/typescript',
+    // plugin:react-hooks/recommended
     "plugin:react-hooks/recommended",
+    // eslint-config-prettier
     'prettier'
   ],
   globals: {

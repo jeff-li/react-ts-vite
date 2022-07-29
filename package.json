@@ -1,13 +1,11 @@
 {
-  "name": "react-ts",
-  "version": "0.1.0",
+  "name": "react-ts-vite",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-ci": "npm test -- --coverage --watchAll=false",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix"
   },
@@ -24,30 +22,27 @@
     ]
   },
   "dependencies": {
-    "@mantine/core": "^4.2.12",
-    "@mantine/dates": "^4.2.12",
-    "@mantine/form": "^4.2.12",
-    "@mantine/hooks": "^4.2.12",
-    "@mantine/next": "^4.2.12",
-    "@mantine/notifications": "^4.2.12",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.43",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "dayjs": "^1.11.3",
+    "@emotion/react": "^11.9.3",
+    "@mantine/core": "^5.0.0",
+    "@mantine/hooks": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "eslint": "^8.19.0",
+    "@types/node": "^16.11.43",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.0"
   }
 }

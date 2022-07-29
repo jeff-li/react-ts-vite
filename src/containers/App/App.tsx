@@ -1,65 +1,34 @@
-import React, { useState } from 'react';
-import { MantineThemeOverride, MantineProvider, 
-  AppShell,
-  Navbar,
-  Header,
-  Text,
-  MediaQuery,
-  Burger
-} from '@mantine/core';
+import { useState } from 'react'
+import reactLogo from '../../assets/react.svg'
+import './App.css'
 
-import AppFooter from '../../components/AppFooter';
-
-const App: React.FC = () => {
-  const myTheme: MantineThemeOverride = {
-    colorScheme: 'dark',
-    primaryColor: 'orange',
-    defaultRadius: 0
-  };
-  const [opened, setOpened] = useState(false);
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <MantineProvider
-      withNormalizeCSS
-      theme={myTheme}
-    >
-      <AppShell
-        styles={(theme) => ({
-          main: {
-            background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
-          },
-        })}
-        navbarOffsetBreakpoint="sm"
-        asideOffsetBreakpoint="sm"
-        fixed
-        navbar={
-          <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 200, lg: 300 }}>
-            <Text>Application navbar</Text>
-          </Navbar>
-        }
-        footer={<AppFooter />}
-        header={
-          <Header height={70} p="md">
-            <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-              <MediaQuery largerThan="sm" styles={{ display: 'none' }}>
-                <Burger
-                  opened={opened}
-                  onClick={() => setOpened((o) => !o)}
-                  size="sm"
-                  mr="xl"
-                />
-              </MediaQuery>
+    <div className="App">
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </div>
+  )
+}
 
-              <Text>Application header</Text>
-            </div>
-          </Header>
-        }
-      >
-        <div>Home</div>
-        <Text>Resize app to see responsive navbar in action</Text>
-      </AppShell>
-    </MantineProvider>
-  );
-};
-
-export default App;
+export default App
