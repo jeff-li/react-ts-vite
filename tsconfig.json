@@ -29,6 +29,8 @@
     "src"
   ], // *** The files TypeScript should type check ***
   "exclude": [
+    "src/**/*.test.tsx",
+    "src/**/*.test.ts",
     "node_modules",
     "build",
     "scripts",
