@@ -10,7 +10,7 @@
     "strict": true, // Enable all strict type checking options
     "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
     "module": "ESNext", // Specify module code generation
-    "moduleResolution": "Node",  // Resolve modules using Node.js style
+    "moduleResolution": "node",  // Resolve modules using Node.js style
     "resolveJsonModule": true, // Include modules imported with .json extension
     "isolatedModules": true,
     "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
@@ -23,7 +23,8 @@
     "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["vite/client", "vitest/globals"]
   },
   "include": [
     "src"
