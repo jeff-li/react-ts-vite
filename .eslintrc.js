@@ -2,18 +2,22 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true
   },
   extends: [
-    'airbnb',
     'eslint:recommended',
+    // eslint-plugin-react
     'plugin:react/recommended',
+    // @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
+    // eslint-plugin-import
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-    'prettier/react', // support special ESLint plugins (e.g. eslint-plugin-react), add extra exclusions for the plugins
+    // plugin:react-hooks/recommended
+    "plugin:react-hooks/recommended",
+    // eslint-config-prettier
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -27,14 +31,8 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  env: {
-    "jest": true
-  },
   plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier',
-    'react-hooks'
+    '@typescript-eslint'
   ],
   settings: {
     "react": {
@@ -44,8 +42,6 @@ module.exports = {
   },
   rules: {
     "eqeqeq": [1, "always"],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -59,6 +55,8 @@ module.exports = {
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ]
-  },
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
+  }
 };
