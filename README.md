@@ -1,20 +1,17 @@
 
-<h1 align="center">react-ts-starter-pack</h1>
+<h1 align="center">react-ts-vite</h1>
 <div align="center">
 
-An opinionated starter pack for your React using TypeScript
+An opinionated starter pack for your React app using TypeScript
 
-![Node.js CI](https://github.com/jeff-li/react-ts-starter-pack/workflows/Node.js%20CI/badge.svg)
-[![codecov](https://codecov.io/gh/jeff-li/react-ts-starter-pack/branch/master/graph/badge.svg)](https://codecov.io/gh/jeff-li/react-starter-pack)
+[![Node.js CI](https://github.com/jeff-li/react-ts-vite/actions/workflows/nodejs.yml/badge.svg)](https://github.com/jeff-li/react-ts-vite/actions/workflows/nodejs.yml)
+[![codecov](https://codecov.io/gh/jeff-li/react-ts-vite/branch/master/graph/badge.svg?token=6ZADYJ9sQ0)](https://codecov.io/gh/jeff-li/react-ts-vite)
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 </div>
 
-> ** :warning: WARNING: Aliens are coming.**  
-> A description of the colour, smell and dangerous behaviour of the aliens.  
-
-> :warning: 
-> **If you are using mobile browser**: Be very careful here!
+> ** :warning: Attention: Moving from CRA to Vite**  
+> This repo was previously known as `react-ts-start-pack`. The first version was built on top of Create React App and it can still be found under the v1 tag. Version 2 now uses Vite as the bundler tool to provide a much better DX: faster start-ups with HMR, more flexible, smaller packages etc.
 
 ## To-do List
 ✅ Vite with TypeScript template  
