@@ -20,8 +20,8 @@ An opinionated starter pack for your React app using TypeScript
 ✅ Github Actions  
 ✅ Vitest  
 ✅ Codecov  
-⬜️ React Router v6  
-⬜️ Mantine  
+✅ React Router v6  
+✅ Mantine  
 ⬜️ Private components with mock authentication structure  
 ⬜️ React Hook Form  
 ⬜️ React Query  
