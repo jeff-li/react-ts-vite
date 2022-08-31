@@ -1,10 +1,12 @@
 import React from 'react';
-import { Footer } from '@mantine/core';
+import { Footer, Center } from '@mantine/core';
 
 const AppFooter: React.FC = () => {
   return (
-    <Footer height={60} p="md">
-      Application footer
+    <Footer height={60} p="md" >
+      <Center>
+        react-ts-vite {new Date().getFullYear()}
+      </Center>
     </Footer>
   );
 };

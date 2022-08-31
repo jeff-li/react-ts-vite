@@ -46,8 +46,6 @@ module.exports = {
       "error",
       "ignorePackages",
       {
-        "js": "never",
-        "jsx": "never",
         "ts": "never",
         "tsx": "never"
       }
@@ -57,6 +55,7 @@ module.exports = {
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
     ],
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": ["off", { ignore: ['children'] }],
   }
 };

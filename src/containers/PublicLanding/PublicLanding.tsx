@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, createStyles } from '@mantine/core';
+import { Box, Card, createStyles, Image, Text, Button, SimpleGrid } from '@mantine/core';
 import reactLogo from '../../assets/react.svg';
 
 const useStyles = createStyles(() => ({
@@ -27,6 +27,25 @@ const useStyles = createStyles(() => ({
 const Home: React.FC = () => {
   const { classes, cx } = useStyles();
   const [count, setCount] = useState<number>(0)
+
+  const sampleCard = (
+    <Card shadow="sm" p="lg" radius="md" withBorder>
+      <Card.Section>
+        <Image
+          src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+          height={160}
+          alt="Norway"
+        />
+      </Card.Section>
+      <Text mt="md" mb="xs" size="sm" color="dimmed">
+        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
+        activities on and around the fjords of Norway
+      </Text>
+      <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+        Book classic tour now
+      </Button>
+    </Card>
+  )
   return (
     <div className={classes.page}>
       <div>
@@ -39,13 +58,21 @@ const Home: React.FC = () => {
       </div>
       <h1>Vite + React</h1>
       <Box sx={{padding: '2em'}}>
-        <button onClick={() => setCount((count) => count + 1)}>
+        <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </Box>
+      <SimpleGrid cols={3}>
+        {sampleCard}
+        {sampleCard}
+        {sampleCard}
+        {sampleCard}
+        {sampleCard}
+        {sampleCard}
+      </SimpleGrid>
       <p>
         Click on the Vite and React logos to learn more
       </p>

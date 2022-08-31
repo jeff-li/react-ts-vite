@@ -4,7 +4,7 @@ import { AppShell } from '@mantine/core';
 import AppHeader from './AppHeader';
 import AppFooter from './AppFooter';
 
-const Layout: React.FC = () => {
+const AppLayout: React.FC = () => {
   return (
     <AppShell
       padding="md"
@@ -19,4 +19,4 @@ const Layout: React.FC = () => {
   );
 };
 
-export default Layout;
+export default AppLayout;

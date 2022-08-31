@@ -6,9 +6,13 @@ import {
   ColorScheme,
 } from '@mantine/core';
 
-import Layout from './components/Layout'
+import AuthProvider from '../../context/AuthContext'
+import AppLayout from './components/AppLayout'
+import ProtectedPage from '../../components/ProtectedPage';
 import PublicLanding from '../PublicLanding';
 import PrivateHome from '../PrivateHome';
+import TempPage from './components/TempPage'
+import Login from '../Login';
 import NoMatch from '../NoMatch'
 
 function App() {
@@ -19,15 +23,26 @@ function App() {
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<PublicLanding />} />
-            <Route path="login" element={<span>LOGIN</span>} />
+        <AuthProvider>
+          <Routes>
+            {/* public pages */}
+            <Route path="login" element={<Login />} />
             <Route path="register" element={<span>Register</span>} />
-            <Route path="home" element={<PrivateHome />} />
-          </Route>
-          <Route path="*" element={<NoMatch />} />
-        </Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<PublicLanding />} />
+              {/* private pages */}
+              <Route element={<ProtectedPage />}>
+                <Route path="/home" element={<PrivateHome />} />
+                <Route path="/projects" element={<TempPage content="Projects Page" />} />
+                <Route path="/users" element={<TempPage content="Users Page" />} />
+                <Route path="/requests" element={<TempPage content="Requests Page" />} />
+                <Route path="/discussions" element={<TempPage content="Discussions Page" />} />
+              
+              </Route>
+            </Route>
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </AuthProvider>
       </MantineProvider>
     </ColorSchemeProvider>
   )

@@ -1,8 +1,12 @@
-import React from 'react';
+import { Text } from '@mantine/core';
+import SideNav from '../../components/SideNav';
 
 const PrivateHome: React.FC = () => {
   return (
-    <span>Private Home Page</span>
+    <>
+      <SideNav />
+      <span>Private Home Page</span>
+    </>
   );
 };
 
