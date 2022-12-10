@@ -1,33 +1,50 @@
 import { useState } from 'react'
-import reactLogo from '../../assets/react.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import {
+  MantineProvider,
+  ColorSchemeProvider,
+  ColorScheme,
+} from '@mantine/core';
+
+import AuthProvider from '../../context/AuthContext'
+import AppLayout from './components/AppLayout'
+import ProtectedPage from '../../components/ProtectedPage';
+import PublicLanding from '../PublicLanding';
+import PrivateHome from '../PrivateHome';
+import TempPage from './components/TempPage'
+import Login from '../Login';
+import NoMatch from '../NoMatch'
 
 function App() {
-  const [count, setCount] = useState<number>(0)
+  const [colorScheme, setColorScheme] = useState<ColorScheme>('light');
+  const toggleColorScheme = (value?: ColorScheme) =>
+  setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+      <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
+        <AuthProvider>
+          <Routes>
+            {/* public pages */}
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<span>Register</span>} />
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<PublicLanding />} />
+              {/* private pages */}
+              <Route element={<ProtectedPage />}>
+                <Route path="/home" element={<PrivateHome />} />
+                <Route path="/projects" element={<TempPage content="Projects Page" />} />
+                <Route path="/users" element={<TempPage content="Users Page" />} />
+                <Route path="/requests" element={<TempPage content="Requests Page" />} />
+                <Route path="/discussions" element={<TempPage content="Discussions Page" />} />
+              
+              </Route>
+            </Route>
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </AuthProvider>
+      </MantineProvider>
+    </ColorSchemeProvider>
   )
 }
 
