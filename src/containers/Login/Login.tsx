@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Center, Card, Title } from '@mantine/core';
-import { Location } from 'history';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import userAuth from '../../hooks/useAuth';
@@ -13,7 +12,9 @@ type FormValues = {
 
 type LocationProps = {
   state: {
-    from: Location;
+    from: {
+      pathname: string;
+    };
   };
 };
 

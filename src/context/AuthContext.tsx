@@ -11,6 +11,7 @@ interface AuthContextType {
   signout: () => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const AuthContext = createContext<AuthContextType>(null!);
 
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
