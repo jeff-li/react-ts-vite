@@ -1,4 +1,3 @@
-import { Text } from '@mantine/core';
 import SideNav from '../../components/SideNav';
 
 const PrivateHome: React.FC = () => {
